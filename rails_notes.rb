@@ -366,6 +366,24 @@ bin/rails test
 bin/rails db:seed
 =end
 
+=begin
+	Validation:
+=end
+	class Product < ApplicationRecord
+		validates :title, :description, :image_url, presence: true
+		validates :price, numericality: {greater_than_or_equal_to: 0.01}
+	end
+=begin
+Fixtures
+A fixture is an environment in which you can run a test
+
+a test fixcture is a specification of the initial contents of a model or models under test
+
+loads the data corresponding to the given model name into the corresponding database table
+fixtures :products
+
+=end
+
 
 
 
